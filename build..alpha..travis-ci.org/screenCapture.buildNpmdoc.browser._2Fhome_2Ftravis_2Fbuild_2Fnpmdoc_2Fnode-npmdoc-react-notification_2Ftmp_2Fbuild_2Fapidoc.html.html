@@ -1,0 +1,166 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/pburtchaell/react-notification">react-notification (v6.6.0)</a>
+</h1>
+<h4>Snackbar style notification component for React</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.react-notification">module react-notification</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-notification.Notification">
+            function <span class="apidocSignatureSpan">react-notification.</span>Notification
+            <span class="apidocSignatureSpan">(props)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.react-notification.NotificationStack">
+            function <span class="apidocSignatureSpan">react-notification.</span>NotificationStack
+            <span class="apidocSignatureSpan">(props)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.react-notification" id="apidoc.module.react-notification">module react-notification</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.react-notification.Notification" id="apidoc.element.react-notification.Notification">
+        function <span class="apidocSignatureSpan">react-notification.</span>Notification
+        <span class="apidocSignatureSpan">(props)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Notification(props) {
+  _classCallCheck(this, Notification);
+
+  var _this = _possibleConstructorReturn(this, (Notification.__proto__ || Object.getPrototypeOf(Notification)).call(this, props));
+
+  _this.getBarStyle = _this.getBarStyle.bind(_this);
+  _this.getActionStyle = _this.getActionStyle.bind(_this);
+  _this.getTitleStyle = _this.getTitleStyle.bind(_this);
+  _this.handleClick = _this.handleClick.bind(_this);
+
+  if (props.onDismiss &amp;&amp; props.isActive) {
+    _this.dismissTimeout = setTimeout(props.onDismiss, props.dismissAfter);
+  }
+  return _this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.react-notification.NotificationStack" id="apidoc.element.react-notification.NotificationStack">
+        function <span class="apidocSignatureSpan">react-notification.</span>NotificationStack
+        <span class="apidocSignatureSpan">(props)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NotificationStack(props) {
+  return _react2.default.createElement(
+    'div',
+    { className: 'notification-list' },
+    props.notifications.map(function (notification, index) {
+      var isLast = index === 0 &amp;&amp; props.notifications.length === 1;
+      var dismissNow = isLast || !props.dismissInOrder;
+
+      // Handle styles
+      var barStyle = props.barStyleFactory(index, notification.barStyle);
+      var activeBarStyle = props.activeBarStyleFactory(index, notification.activeBarStyle);
+
+      // Allow onClick from notification stack or individual notifications
+      var onClick = notification.onClick || props.onClick;
+      var onDismiss = props.onDismiss;
+
+      var dismissAfter = notification.dismissAfter;
+
+
+      if (dismissAfter !== false) {
+        if (dismissAfter == null) dismissAfter = props.dismissAfter;
+        if (!dismissNow) dismissAfter += index * 1000;
+      }
+
+      return _react2.default.createElement(_stackedNotification2.default, _extends({}, notification, {
+        key: notification.key,
+        isLast: isLast,
+        action: notification.action || props.action,
+        dismissAfter: dismissAfter,
+        onDismiss: onDismiss.bind(undefined, notification),
+        onClick: onClick.bind(undefined, notification),
+        activeBarStyle: activeBarStyle,
+        barStyle: barStyle
+      }));
+    })
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
