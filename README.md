@@ -1,6 +1,6 @@
 # npmdoc-react-notification
 
-#### api documentation for  [react-notification (v6.6.1)](https://github.com/pburtchaell/react-notification)  [![npm package](https://img.shields.io/npm/v/npmdoc-react-notification.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-react-notification) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-react-notification.svg)](https://travis-ci.org/npmdoc/node-npmdoc-react-notification)
+#### basic api documentation for  [react-notification (v6.6.1)](https://github.com/pburtchaell/react-notification)  [![npm package](https://img.shields.io/npm/v/npmdoc-react-notification.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-react-notification) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-react-notification.svg)](https://travis-ci.org/npmdoc/node-npmdoc-react-notification)
 
 #### Snackbar style notification component for React
 
@@ -21,47 +21,18 @@
 ```json
 
 {
-    "name": "react-notification",
-    "version": "6.6.1",
-    "description": "Snackbar style notification component for React",
-    "main": "dist/index.js",
-    "scripts": {
-        "prepublish": "npm run build",
-        "precommit": "echo 'Running pre-commit hooks...' && npm test",
-        "prebuild": "npm test",
-        "build": "'npm bin'/babel src -d dist",
-        "pretest": "npm run lint",
-        "test": "./bin/test.sh",
-        "lint": "'npm bin'/eslint src/**/*.js test/**/*.js",
-        "start": "node examples/server.js"
+    "author": {
+        "name": "Patrick Burtchaell",
+        "url": "pburtchaell.com"
     },
-    "pre-commit": [
-        "precommit"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https+git://github.com/pburtchaell/react-notification"
-    },
-    "keywords": [
-        "react",
-        "component",
-        "react-component",
-        "components",
-        "ui",
-        "notify",
-        "notification",
-        "notification stack",
-        "snackbar"
-    ],
-    "author": "Patrick Burtchaell <patrick@pburtchaell.com> (pburtchaell.com)",
-    "license": "MIT",
     "bugs": {
         "url": "https://github.com/pburtchaell/react-notification/issues"
     },
-    "homepage": "https://github.com/pburtchaell/react-notification",
-    "peerDependencies": {
-        "react": "^0.14.0 || ^15.0.0"
+    "dependencies": {
+        "prop-types": "^15.5.8",
+        "react-addons-test-utils": "^15.5.1"
     },
+    "description": "Snackbar style notification component for React",
     "devDependencies": {
         "babel-cli": "^6.24.1",
         "babel-core": "^6.24.1",
@@ -95,10 +66,58 @@
         "webpack-dev-middleware": "^1.10.1",
         "webpack-dev-server": "^1.14.1"
     },
-    "dependencies": {
-        "prop-types": "^15.5.8",
-        "react-addons-test-utils": "^15.5.1"
-    }
+    "directories": {},
+    "dist": {
+        "shasum": "437036ecf37dec6516d159164a22773b8a92d774",
+        "tarball": "https://registry.npmjs.org/react-notification/-/react-notification-6.6.1.tgz"
+    },
+    "gitHead": "297a0ee5b3533bcc24961d956999b479e9a0e9ee",
+    "homepage": "https://github.com/pburtchaell/react-notification",
+    "keywords": [
+        "react",
+        "component",
+        "react-component",
+        "components",
+        "ui",
+        "notify",
+        "notification",
+        "notification stack",
+        "snackbar"
+    ],
+    "license": "MIT",
+    "main": "dist/index.js",
+    "maintainers": [
+        {
+            "name": "berkeleytrue"
+        },
+        {
+            "name": "pburtchaell"
+        }
+    ],
+    "name": "react-notification",
+    "optionalDependencies": {},
+    "peerDependencies": {
+        "react": "^0.14.0 || ^15.0.0"
+    },
+    "pre-commit": [
+        "precommit"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https+git://github.com/pburtchaell/react-notification"
+    },
+    "scripts": {
+        "build": "'npm bin'/babel src -d dist",
+        "lint": "'npm bin'/eslint src/**/*.js test/**/*.js",
+        "prebuild": "npm test",
+        "precommit": "echo 'Running pre-commit hooks...' && npm test",
+        "prepublish": "npm run build",
+        "pretest": "npm run lint",
+        "start": "node examples/server.js",
+        "test": "./bin/test.sh"
+    },
+    "version": "6.6.1",
+    "bin": {}
 }
 ```
 
